@@ -1,0 +1,78 @@
+.login {
+    height: 100vh;
+    background: #c1beff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login .card {
+    box-shadow: 3px 3px 6px rgba(10, 10, 10, 0.5), 3px 3px 6px #c1beff;
+    width: 55%;
+    display: flex;
+    border-radius: 10px;
+    min-height: 650px;
+    background-color: #ddd;
+    overflow: hidden;
+}
+.login .card .left {
+    flex: 1;
+    padding: 50px;
+    background: linear-gradient(rgba(15, 13, 15, 0.9), rgba(44, 31, 44, 0.7)), url("/violin-1.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    gap: 20px;
+}
+.login .card .left h1 {
+    font-size: 70px;
+    line-height: 70px;
+}
+.login .card .left span {
+    font-size: 12px;
+}
+.login .card .left button {
+    width: 50%;
+    border: none;
+    outline: none;
+    box-shadow: 3px 3px 5px rgba(54, 52, 52, 0.7);
+    padding: 10px;
+    text-align: left;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.login .card .right {
+    flex: 1;
+    background-color: #d6d1ce;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    gap: 30px;
+}
+.login .card .right form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.login .card .right form input {
+    border: none;
+    outline: none;
+    box-shadow: 3px 3px 6px rgba(10, 10, 10, 0.3);
+    padding: 15px;
+    border-radius: 5px;
+}
+.login .card .right form button {
+    font-weight: bold;
+    width: 50%;
+    border: none;
+    outline: none;
+    box-shadow: 3px 3px 6px rgba(10, 10, 10, 0.3);
+    padding: 10px;
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+}
