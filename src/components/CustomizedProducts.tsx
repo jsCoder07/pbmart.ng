@@ -8,7 +8,7 @@ function CustomizedProducts({
   variants,
   productOptions,
 }: {
-  productId: string;
+  productId: any;
   variants: products.Variant[];
   productOptions: products.ProductOption[];
 }) {
@@ -105,7 +105,7 @@ function CustomizedProducts({
               //   >
               //     {choice.description}
               //     {disabled && "disabled"}
-              //     {selected && "selected"} 
+              //     {selected && "selected"}
               //   </div>
               // );
             })}
