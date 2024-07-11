@@ -105,7 +105,7 @@ function CustomizedProducts({
               //   >
               //     {choice.description}
               //     {disabled && "disabled"}
-              //     {selected && "selected"}
+              //     {selected && "selected"} 
               //   </div>
               // );
             })}
