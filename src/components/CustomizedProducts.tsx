@@ -8,7 +8,7 @@ function CustomizedProducts({
   variants,
   productOptions,
 }: {
-  productId: any;
+  productId: string;
   variants: products.Variant[];
   productOptions: products.ProductOption[];
 }) {
@@ -17,12 +17,15 @@ function CustomizedProducts({
   }>({});
   const [selectedVariant, setSelectedVariant] = useState<products.Variant>();
   useEffect(() => {
-    const variant=variants.find(v=>{
-      const variantChoice=v.choices
-      if(!variantChoice) return false;
-      return Object.entries(selectedOption).every(([key,value])=>variantChoice[key]===value)
-    })
-  }, [selectedOption,variants]);
+    const variant = variants.find((v) => {
+      const variantChoice = v.choices;
+      if (!variantChoice) return false;
+      return Object.entries(selectedOption).every(
+        ([key, value]) => variantChoice[key] === value
+      );
+    });
+    setSelectedVariant(variant);
+  }, [selectedOption, variants]);
   const handleSelectedOption = (optionType: string, choice: string) => {
     setSelectedOption((prev) => ({ ...prev, [optionType]: choice }));
   };
@@ -42,11 +45,11 @@ function CustomizedProducts({
   };
   return (
     <div className="flex flex-col gap-6">
-      {productOptions.map((option,i) => (
+      {productOptions.map((option) => (
         //
-        <div className="flex flex-col gap-4" key={i}>
+        <div className="flex flex-col gap-4" key={option.name}>
           <h4 className="font-medium">Choose a {option.name}</h4>
-          <ul className="flex items-center gap-3" key={i}>
+          <ul className="flex items-center gap-3" key={option.name}>
             {option.choices?.map((choice) => {
               const disabled = !isVariantInstock({
                 ...selectedOption,
@@ -120,7 +123,13 @@ function CustomizedProducts({
           </ul>
         </div>
       ))}
-      <Add productId={productId} variantId={selectedVariant?._id||'00000000-0000-0000-0000-000000000000'} stockNumber={selectedVariant?.stock?.quantity||0}/>
+      <Add
+        productId={productId}
+        variantId={
+          selectedVariant?._id || "00000000-0000-0000-0000-000000000000"
+        }
+        stockNumber={selectedVariant?.stock?.quantity || 0}
+      />
       {/* <h4 className="font-medium">Choose a size</h4>
       <ul className="flex items-center gap-3">
         <li className="ring-1 ring-green-500 text-sm cursor-pointer py-1 px-4 rounded-md text-green-500">Small</li>
